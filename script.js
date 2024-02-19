@@ -35,14 +35,59 @@ const ingredients = [
 // Після чого, вставить усі <li> за одну операцію у список ul#ingredients.
 
 const ulIngr = document.querySelector("#ingredients");
-const res = [];
 ingredients.forEach((ingredient) => {
   const li = document.createElement("li");
   li.textContent = ingredient;
   li.classList.add("item");
-  res.push(li);
-});
-console.log(res);
-res.forEach((li) => {
+
   ulIngr.appendChild(li);
 });
+
+const fruits = ["Apple", "Banana", "Orange", "Grapes", "Pineapple"];
+
+const frut = document.querySelector("#fruits");
+fruits.forEach((fruit) => {
+  const li = document.createElement("li");
+  li.textContent = fruit;
+  li.classList.add("items");
+
+  frut.appendChild(li);
+});
+
+// Використовуй масив об'єктів images для створення елементів <img>,
+// вкладених в <li>.
+// Для створення розмітки використовуй шаблонні рядки і метод
+// insertAdjacentHTML()
+
+const images = [
+  {
+    url: "https://images.pexels.com/photos/219943/pexels-photo-219943.jpeg?dpr=2&h=750&w=1260",
+    alt: "White and Black Long Fur Cat",
+  },
+  {
+    url: "https://images.pexels.com/photos/213399/pexels-photo-213399.jpeg?dpr=2&h=750&w=1260",
+    alt: "Orange and White Koi Fish Near Yellow Koi Fish",
+  },
+  {
+    url: "https://images.pexels.com/photos/219943/pexels-photo-219943.jpeg?dpr=2&h=750&w=1260",
+    alt: "Group of Horses Running",
+  },
+];
+
+const gallery = document.querySelector(".gallery");
+const markup = images
+  .map(({ url, alt }) => {
+    return `<li class="imeg">
+    <img src="${url}" style="width: 320px; alt="${alt}">
+  </li>`;
+  })
+  .join("");
+gallery.insertAdjacentHTML("beforeend", markup);
+const ingredients = [
+  "Potatoes",
+  "Mushrooms",
+  "Garlic",
+  "Tomatos",
+  "Herbs",
+  "Condiments",
+];
