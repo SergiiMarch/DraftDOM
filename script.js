@@ -83,11 +83,31 @@ const markup = images
   })
   .join("");
 gallery.insertAdjacentHTML("beforeend", markup);
-const ingredients = [
-  "Potatoes",
-  "Mushrooms",
-  "Garlic",
-  "Tomatos",
-  "Herbs",
-  "Condiments",
+
+const carBrands = [
+  "Toyota",
+  "Honda",
+  "Ford",
+  "Chevrolet",
+  "Nissan",
+  "BMW",
+  "Mercedes-Benz",
+  "Audi",
+  "Volkswagen",
+  "Lexus",
+  "Hyundai",
+  "Kia",
+  "Volvo",
+  "Tesla",
+  "Subaru",
 ];
+
+const auto = document.querySelector(".auto");
+console.log(auto);
+
+// carBrands.forEach((car) => {
+//   const liEl = document.createElement("li");
+//   liEl.textContent = car;
+//   liEl.classList.add("items");
+//   auto.append(liEl);
+// });
