@@ -23,8 +23,10 @@ button {
   justify-content: center;
   align-items: center;
 
-  width: 150px;
-  height: 130px;
+  width: 120px;
+  height: 80px;
+
+  border-radius: 20px;
 }
 #value {
   font-size: 22px;
@@ -38,4 +40,9 @@ button:hover {
 button[data-action] {
   color: rgb(72, 32, 158);
   font-size: 32px;
+}
+
+button[data-action]:hover {
+  font-size: 32px; /* Змінюємо розмір шрифту при наведенні */
+  color: gold; /* Змінюємо колір тексту при наведенні */
 }
