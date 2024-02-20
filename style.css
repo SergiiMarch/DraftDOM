@@ -18,3 +18,24 @@
 .imeg:hover {
   box-shadow: 0 0 25px rgba(42, 40, 40, 0.533);
 }
+
+button {
+  justify-content: center;
+  align-items: center;
+
+  width: 150px;
+  height: 130px;
+}
+#value {
+  font-size: 22px;
+  color: brown;
+}
+
+button:hover {
+  background-color: rgb(115, 232, 86);
+}
+
+button[data-action] {
+  color: red;
+  font-size: 32px;
+}

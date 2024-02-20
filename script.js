@@ -105,9 +105,37 @@ const carBrands = [
 const auto = document.querySelector(".auto");
 console.log(auto);
 
+const liEl = carBrands
+  .map((auto) => {
+    return ` <li class = 'item'>${auto}</li>`;
+  })
+  .join("");
+
+auto.insertAdjacentHTML("beforeend", liEl);
+console.dir(auto);
+
 // carBrands.forEach((car) => {
 //   const liEl = document.createElement("li");
 //   liEl.textContent = car;
 //   liEl.classList.add("items");
 //   auto.append(liEl);
 // });
+
+// Створи змінну counterValue, в якій буде зберігатися поточне значення лічильника та ініціалізуй її значенням 0.
+// Додай слухачів кліків до кнопок, всередині яких збільшуй або зменшуй значення лічильника.
+// Оновлюй інтерфейс новим значенням змінної counterValue.
+
+const divElement = document.getElementById("counter");
+const btnIncrement = document.querySelector('button[data-action="increment"]');
+const btnDecrement = document.querySelector('button[data-action="decrement"]');
+const spanEl = document.getElementById("value");
+
+btnIncrement.addEventListener("click", () => {
+  console.log("Клік інкремент");
+  spanEl.textContent = +spanEl.textContent + 1;
+});
+
+btnDecrement.addEventListener("click", () => {
+  console.log("Клік декремент");
+  spanEl.textContent = spanEl.textContent - 1;
+});
