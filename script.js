@@ -59,30 +59,30 @@ fruits.forEach((fruit) => {
 // Для створення розмітки використовуй шаблонні рядки і метод
 // insertAdjacentHTML()
 
-const images = [
-  {
-    url: "https://images.pexels.com/photos/219943/pexels-photo-219943.jpeg?dpr=2&h=750&w=1260",
-    alt: "White and Black Long Fur Cat",
-  },
-  {
-    url: "https://images.pexels.com/photos/213399/pexels-photo-213399.jpeg?dpr=2&h=750&w=1260",
-    alt: "Orange and White Koi Fish Near Yellow Koi Fish",
-  },
-  {
-    url: "https://images.pexels.com/photos/219943/pexels-photo-219943.jpeg?dpr=2&h=750&w=1260",
-    alt: "Group of Horses Running",
-  },
-];
+// const images = [
+//   {
+//     url: "https://images.pexels.com/photos/219943/pexels-photo-219943.jpeg?dpr=2&h=750&w=1260",
+//     alt: "White and Black Long Fur Cat",
+//   },
+//   {
+//     url: "https://images.pexels.com/photos/213399/pexels-photo-213399.jpeg?dpr=2&h=750&w=1260",
+//     alt: "Orange and White Koi Fish Near Yellow Koi Fish",
+//   },
+//   {
+//     url: "https://images.pexels.com/photos/219943/pexels-photo-219943.jpeg?dpr=2&h=750&w=1260",
+//     alt: "Group of Horses Running",
+//   },
+// ];
 
-const gallery = document.querySelector(".gallery");
-const markup = images
-  .map(({ url, alt }) => {
-    return `<li class="imeg">
-    <img src="${url}" style="width: 320px; alt="${alt}">
-  </li>`;
-  })
-  .join("");
-gallery.insertAdjacentHTML("beforeend", markup);
+// const gallery = document.querySelector(".gallery");
+// const markup = images
+//   .map(({ url, alt }) => {
+//     return `<li class="imeg">
+//     <img src="${url}" style="width: 320px; alt="${alt}">
+//   </li>`;
+//   })
+//   .join("");
+// gallery.insertAdjacentHTML("beforeend", markup);
 
 const carBrands = [
   "Toyota",
@@ -139,3 +139,40 @@ btnDecrement.addEventListener("click", () => {
   console.log("Клік декремент");
   spanEl.textContent = spanEl.textContent - 1;
 });
+
+/* task new 
+-перебрати масив
+-всі додатні числа додаємо в окремий масів
+-віводім результат в консоль*/
+
+const numbers = [1, 2, 3, 4, -5, 6, 7, 8, -9, 10];
+
+const newArr = numbers.reduce(
+  (acc, number) => (number > 0 ? acc + number : acc),
+  0
+);
+console.log(newArr);
+
+/*Напиши скрипт, який під час набору тексту
+ в інпуті input#name-input (подія input), 
+ підставляє його поточне значення в span#name-output. 
+ Якщо інпут порожній, у спані повинен відображатися рядок "Anonymous".*/
+
+const inputEl = document.getElementById("name-input");
+const spannEl = document.querySelector("h1 > span");
+
+inputEl.addEventListener("input", onHandleInput);
+
+function onHandleInput(event) {
+  spannEl.textContent = event.currentTarget.value;
+}
+
+/*Напиши скрипт, який під час втрати фокусу на інпуті (подія blur), 
+перевіряє його вміст щодо правильної кількості введених символів.
+Яка кількість символів повинна бути в інпуті, 
+зазначається в його атрибуті data-length.
+Якщо введена правильна кількість символів, 
+то border інпуту стає зеленим, якщо неправильна кількість - червоним.
+Для додавання стилів використовуй CSS-класи valid і invalid, які ми вже додали у вихідні файли завдання.
+
+*/

@@ -29,7 +29,7 @@ button {
   border-radius: 20px;
 }
 #value {
-  font-size: 22px;
+  font-size: 4 2px;
   color: brown;
 }
 
@@ -44,5 +44,17 @@ button[data-action] {
 
 button[data-action]:hover {
   font-size: 32px; /* Змінюємо розмір шрифту при наведенні */
-  color: gold; /* Змінюємо колір тексту при наведенні */
+  color: rgb(154, 2, 242); /* Змінюємо колір тексту при наведенні */
+}
+/*--------------------------------------------------*/
+#validation-input {
+  border: 3px solid #bdbdbd;
+}
+
+#validation-input.valid {
+  border-color: #4caf50;
+}
+
+#validation-input.invalid {
+  border-color: #f44336;
 }
