@@ -176,3 +176,25 @@ function onHandleInput(event) {
 Для додавання стилів використовуй CSS-класи valid і invalid, які ми вже додали у вихідні файли завдання.
 
 */
+const input = document.getElementById("validation-input");
+console.dir(input);
+const dataLengthValue = input.getAttribute("data-length");
+const dataPlaceholderValue = input.getAttribute("placeholder");
+console.log(dataPlaceholderValue);
+input.addEventListener("blur", onHandlerInput);
+
+function onHandlerInput(event) {
+  console.log(event.currentTarget.value);
+  console.log(input.length);
+  if (event.currentTarget.value.length > dataLengthValue) {
+    input.classList.add("invalid");
+  } else {
+    input.classList.add("valid");
+  }
+  // event.preventDefault();
+  // const formData = new FormData(event.currentTarget);
+  // formData.forEach((value, name) => {
+  //   console.log(name);
+  //   console.log(value);
+  // });
+}
