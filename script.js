@@ -177,24 +177,17 @@ function onHandleInput(event) {
 
 */
 const input = document.getElementById("validation-input");
-console.dir(input);
-const dataLengthValue = input.getAttribute("data-length");
+const dataLengthValue = parseInt(input.getAttribute("data-length"));
 const dataPlaceholderValue = input.getAttribute("placeholder");
-console.log(dataPlaceholderValue);
+
 input.addEventListener("blur", onHandlerInput);
 
 function onHandlerInput(event) {
-  console.log(event.currentTarget.value);
-  console.log(input.length);
-  if (event.currentTarget.value.length > dataLengthValue) {
-    input.classList.add("invalid");
-  } else {
+  if (event.currentTarget.value.length === dataLengthValue) {
+    input.classList.remove("invalid");
     input.classList.add("valid");
+  } else {
+    input.classList.remove("valid");
+    input.classList.add("invalid");
   }
-  // event.preventDefault();
-  // const formData = new FormData(event.currentTarget);
-  // formData.forEach((value, name) => {
-  //   console.log(name);
-  //   console.log(value);
-  // });
 }
