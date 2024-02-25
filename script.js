@@ -211,12 +211,46 @@ form.addEventListener("submit", onHandlerSubmitForm);
 
 function onHandlerSubmitForm(event) {
   event.preventDefault();
-  const formData = new FormData(event.currentTarget);
-  formData.forEach((value, name) => {
-    if ((name.password = " ")) {
-      alert("Заповніть коректно поля password");
-    } else if ((name.email = " ")) {
-      alert("Заповніть коректно поля email");
-    }
-  });
+
+  // Отримання значень полів форми
+  const email = form.elements.email.value;
+  const password = form.elements.password.value;
+
+  // Перевірка на незаповнені поля
+  if (email === "" || password === "") {
+    form.classList.remove("valid");
+    form.classList.add("invalid");
+    alert("ВВедіть коректні дані форми");
+  } else {
+    // Створення об'єкта з введеними даними
+    const formData = {
+      email: email,
+      password: password,
+    };
+
+    // Виведення об'єкта із введеними даними в консоль
+    console.log(formData);
+    form.reset();
+  }
+}
+//  Напиши скрипт,
+//  який змінює кольори фону елемента <body> через
+//  інлайн-стиль по кліку на button.change-color
+//  і виводить значення кольору в span.color.
+const body = document.querySelector("body");
+const btnElColor = document.querySelector(".change-color");
+const spanColorEl = document.querySelector(".color");
+
+btnElColor.addEventListener("click", onHandlerBtn);
+
+function onHandlerBtn(event) {
+  const color = getRandomHexColor();
+  body.style.backgroundColor = color;
+  spanColorEl.textContent = color;
+}
+
+function getRandomHexColor() {
+  return `#${Math.floor(Math.random() * 16777215)
+    .toString(16)
+    .padStart(6, 0)}`;
 }
